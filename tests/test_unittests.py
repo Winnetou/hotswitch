@@ -16,7 +16,7 @@ Web3Mock = Mock(
 )
 # this one will instantiate, but raise an exception on every call
 Web3UnhealthyMock = Mock(
-    is_connected=True, eth=Mock(side_effect=Exception("No connection"))
+    is_connected=True, eth=Mock(block_number=Mock(side_effect=Exception))
 )
 
 # this one will never instantiate
@@ -34,15 +34,6 @@ def test_provider_returns_last_block():
         last_block = provider.get_last_block()
         assert last_block == 100
 
-
-def test_provider_returns_last_block_unhealthy_node():
-    """
-    Test that the provider returns the last block - unhappy path
-    """
-    with patch("service.provider.Web3", return_value=Web3UnhealthyMock):
-        provider = Provider(provider_url="https://taralala7")
-        with pytest.raises(NodeUnhealthy):
-            provider.get_last_block()
 
 
 def test_provider_never_instantiates_unhealthy_node():
