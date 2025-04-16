@@ -19,4 +19,6 @@ def test_integration_hotswitch():
     Service has two providers, and when one is unhealthy, the other one is used
     """
     service = Service(providers=[HealthyProviderMock, UnhealthyProviderMock])
-    #service.run()
+    # TODO: finish it, that test is not complete
+    # running it ends with infinite loop
+    # service.run()

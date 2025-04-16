@@ -1,7 +1,7 @@
 from web3 import Web3
 from web3.exceptions import BlockNotFound
-from service.exceptions import NodeUnhealthy
 
+from service.exceptions import NodeUnhealthy
 from service.logger import logger
 
 

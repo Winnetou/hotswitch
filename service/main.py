@@ -1,9 +1,8 @@
 import os
 
-from service.service import Service
-from service.provider import Provider
-
 from service.logger import logger
+from service.provider import Provider
+from service.service import Service
 
 
 def _provision_providers():

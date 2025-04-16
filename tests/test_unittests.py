@@ -25,7 +25,6 @@ Web3DeadMock = Mock(
 )
 
 
-
 def test_provider_returns_last_block():
     """
     Test that the provider returns the last block - happy path

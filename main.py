@@ -1,7 +1,7 @@
 import logging
 import os
 
-from service import Service, Provider
+from service import Provider, Service
 
 logger = logging.getLogger(__name__)
 

@@ -1,11 +1,13 @@
 from collections import deque
-from typing import List
 from time import sleep
-from service.exceptions import NodeUnhealthy
-from service.provider import Provider
+from typing import List
+
 from web3.exceptions import BlockNotFound
 
+from service.exceptions import NodeUnhealthy
 from service.logger import logger
+from service.provider import Provider
+
 
 class Service:
 
@@ -53,7 +55,9 @@ class Service:
                 last_block += 1
             except BlockNotFound:
                 # no drama
-                logger.info(f"Block {last_block} not found yet, sleeping for 10 seconds")
+                logger.info(
+                    f"Block {last_block} not found yet, sleeping for 10 seconds"
+                )
                 sleep(10)
             except NodeUnhealthy:
                 # move the current node to the deque
