@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "daily"
     groups:
-      python-dependencies:
+      all-dependencies:
         patterns:
           - "*"
 
@@ -19,6 +19,14 @@ updates:
     schedule:
       interval: "daily"
     groups:
-      test-dependencies:
+      all-dependencies:
+        patterns:
+          - "*"
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "daily"
+    groups:
+      all-dependencies:
         patterns:
           - "*"
