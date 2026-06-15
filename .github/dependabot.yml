@@ -8,7 +8,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "hourly"
+      interval: "daily"
     groups:
       python-dependencies:
         patterns:
@@ -17,7 +17,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "/tests"
     schedule:
-      interval: "hourly"
+      interval: "daily"
     groups:
       test-dependencies:
         patterns:
